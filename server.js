@@ -12,6 +12,9 @@ app.use(bodyParser.json())
 
 app.get('/', function (err, req, res) {
   res.send('database connection')
+  if (err) {
+    throw new Error('Something went wrong!')
+  }
 })
 
 app.use('/', routes)
